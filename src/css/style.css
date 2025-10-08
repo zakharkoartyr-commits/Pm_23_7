@@ -1,0 +1,238 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 30px 0;
+  background-color: #f4f4f4;
+  color: #666;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.resume-container {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  height: 1100px;
+  overflow-y: scroll;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.left-column {
+  width: 35%;
+  background-color: #f7f7f7;
+  padding: 0 25px 25px;
+}
+.left-column .address-header {
+  text-align: right;
+  padding-top: 25px;
+  font-weight: 300;
+}
+.left-column .address-header p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.left-column .address-header p:first-child {
+  font-weight: 400;
+  color: #666;
+}
+.left-column .profile-photo-area {
+  padding: 10px 0;
+  border-bottom: 5px solid #EF5350;
+  margin-bottom: 25px;
+}
+.left-column .profile-photo-area img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.left-column .section {
+  margin-bottom: 25px;
+}
+.left-column .section h2 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 700;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.left-column .contact-item, .left-column .reference-item {
+  margin-bottom: 15px;
+}
+.left-column .contact-item p, .left-column .reference-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.left-column .contact-item p strong, .left-column .reference-item p strong {
+  color: #333;
+  font-weight: 600;
+}
+.left-column .hobbies-list {
+  display: flex;
+  justify-content: space-between;
+}
+.left-column .hobbies-list .hobby-item {
+  text-align: center;
+}
+.left-column .hobbies-list .hobby-item i {
+  font-size: 1.3rem;
+  color: #EF5350;
+  border: 2px solid #EF5350;
+  border-radius: 50%;
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.left-column .hobbies-list .hobby-item p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.right-column {
+  width: 65%;
+  padding: 25px 30px;
+  border-left: none;
+}
+.right-column .name-header {
+  margin-bottom: 25px;
+}
+.right-column .name-header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.right-column .name-header .designation {
+  font-size: 1.1rem;
+  color: #EF5350;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.right-column .section {
+  padding-top: 0;
+  margin-bottom: 30px;
+}
+.right-column .section h2 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 700;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.right-column .section.about-section p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.right-column .education-grid {
+  display: flex;
+  gap: 30px;
+}
+.right-column .education-grid .education-item h3 {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.right-column .education-grid .education-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.right-column .education-grid .education-item .dates {
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 400;
+}
+.right-column .experience-item {
+  margin-bottom: 25px;
+}
+.right-column .experience-item h3 {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+.right-column .experience-item .job-meta {
+  margin-bottom: 5px;
+}
+.right-column .experience-item .job-meta .tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  color: #fff;
+  margin-right: 10px;
+}
+.right-column .experience-item .job-meta .tag.present {
+  background-color: #EF5350;
+}
+.right-column .experience-item .job-meta .tag.past {
+  background-color: #666;
+}
+.right-column .experience-item .job-meta .company-location {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+.right-column .experience-item p {
+  font-size: 0.9rem;
+}
+.right-column .expertise-list {
+  display: flex;
+  justify-content: space-between;
+}
+.right-column .expertise-list .expertise-item {
+  text-align: center;
+}
+.right-column .expertise-list .expertise-item .circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #EF5350;
+  border: 2px solid #EF5350;
+  margin-bottom: 5px;
+}
+.right-column .expertise-list .expertise-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-column, .right-column {
+    width: 100%;
+    border-left: none;
+    padding: 20px;
+  }
+  .left-column .address-header {
+    text-align: left;
+  }
+}

@@ -1,0 +1,197 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 30px 0;
+  background-color: #f4f4f4;
+  color: #666;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.resume-container {
+  max-width: 850px !important;
+  min-height: 1050px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.left-column {
+  background-color: #f7f7f7;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.address-header {
+  text-align: right;
+  margin-bottom: 20px;
+}
+.address-header p {
+  font-weight: 300;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+.address-header p:first-child {
+  font-weight: 400;
+  color: #666;
+}
+
+.profile-photo-area {
+  padding: 10px 0;
+  border-bottom: 5px solid #EF5350;
+  margin-bottom: 25px;
+}
+.profile-photo-area img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item, .reference-item {
+  margin-bottom: 15px;
+}
+.contact-item p, .reference-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.contact-item p strong, .reference-item p strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.hobbies-list .hobby-item {
+  text-align: center;
+}
+.hobbies-list .hobby-item i {
+  font-size: 1.3rem;
+  color: #EF5350;
+  border: 2px solid #EF5350;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.right-column {
+  padding: 25px 30px 25px 35px !important;
+}
+
+.name-header {
+  margin-bottom: 25px;
+}
+.name-header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.designation {
+  font-size: 1.1rem;
+  color: #EF5350;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 3px !important;
+  text-transform: uppercase;
+}
+
+.section {
+  margin-bottom: 25px !important;
+}
+.section h2 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 700 !important;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-section p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.education-grid .education-item h3 {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.education-grid .education-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.education-grid .education-item .dates {
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 400;
+}
+
+.experience-item h3 {
+  font-size: 0.95rem;
+}
+.experience-item .tag {
+  font-size: 0.7rem;
+  padding: 2px 7px;
+}
+.experience-item .company-location {
+  font-size: 0.9rem;
+}
+.experience-item p {
+  font-size: 0.9rem;
+}
+
+.expertise-list {
+  margin-top: 25px;
+}
+.expertise-list .expertise-item {
+  text-align: center;
+}
+.expertise-list .expertise-item .circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #EF5350;
+  border: 2px solid #EF5350;
+  margin-bottom: 5px;
+}
+.expertise-list .expertise-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+  .left-column, .right-column {
+    width: 100%;
+    padding: 20px !important;
+  }
+  .left-column .address-header {
+    text-align: left;
+  }
+}
