@@ -1,197 +1,240 @@
-body {
-  font-family: "Poppins", sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 30px 0;
-  background-color: #f4f4f4;
-  color: #666;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #e0e0e0;
+  color: #2c2c2c;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .resume-container {
-  max-width: 850px !important;
-  min-height: 1050px;
+  position: relative;
+  width: 900px;
+  min-height: 1272px;
+  margin: 50px auto;
   background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .left-column {
-  background-color: #f7f7f7;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 33%;
+  background-color: #f0f0f0;
 }
-
-.address-header {
-  text-align: right;
+.left-column .address-left-column {
+  padding: 35px 35px 0 35px;
+}
+.left-column .address-left-column h3 {
+  color: #e86142;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.left-column .address-left-column p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+.left-column .profile-image-container .orange-bar {
+  height: 8px;
+  background-color: #e86142;
+}
+.left-column .profile-image-container img {
+  width: 100%;
+  display: block;
+}
+.left-column .left-column-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  gap: 40px;
+}
+.left-column h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1.5px;
   margin-bottom: 20px;
+  font-weight: 700;
 }
-.address-header p {
-  font-weight: 300;
-  font-size: 0.85rem;
-  margin-bottom: 0;
-}
-.address-header p:first-child {
-  font-weight: 400;
+.left-column .contact-info p {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.4;
   color: #666;
 }
-
-.profile-photo-area {
-  padding: 10px 0;
-  border-bottom: 5px solid #EF5350;
-  margin-bottom: 25px;
+.left-column .contact-info p strong {
+  color: #2c2c2c;
+  font-weight: 700;
 }
-.profile-photo-area img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.left-column .reference {
+  font-size: 15px;
 }
-
-.contact-item, .reference-item {
-  margin-bottom: 15px;
+.left-column .reference .small-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
 }
-.contact-item p, .reference-item p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-.contact-item p strong, .reference-item p strong {
-  color: #333;
-  font-weight: 600;
-}
-
-.hobbies-list .hobby-item {
+.left-column .hobbies .hobbies-list {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
 }
-.hobbies-list .hobby-item i {
-  font-size: 1.3rem;
-  color: #EF5350;
-  border: 2px solid #EF5350;
+.left-column .hobbies .hobbies-list .hobby-item {
+  font-size: 13px;
+  color: #666;
+}
+.left-column .hobbies .hobbies-list .hobby-item i {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border: 2px solid #e86142;
   border-radius: 50%;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
+  color: #e86142;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .right-column {
-  padding: 25px 30px 25px 35px !important;
+  padding: 50px 40px 30px 41%;
 }
-
-.name-header {
+.right-column h2 {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-weight: 900;
   margin-bottom: 25px;
 }
-.name-header h1 {
-  font-size: 2.2rem;
-  margin: 0;
-  color: #333;
-  font-weight: 700;
-  letter-spacing: 1px;
+.right-column section {
+  margin-bottom: 60px;
 }
-
-.designation {
-  font-size: 1.1rem;
-  color: #EF5350;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 3px !important;
+.right-column .main-header {
+  margin-bottom: 80px;
+}
+.right-column .main-header .address {
+  display: none;
+}
+.right-column .main-header h1 {
+  font-size: 58px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.right-column .main-header .job-title {
+  font-size: 16px;
+  color: #666;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #e86142;
+  display: inline-block;
+  font-weight: 700;
+}
+.right-column .about-me p, .right-column .job-description {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+}
+.right-column .education .education-entries {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.right-column .education .education-entries .entry .major {
+  font-weight: 700;
+  font-size: 16px;
+}
+.right-column .education .education-entries .entry .university {
+  color: #666;
+  font-size: 15px;
+}
+.right-column .education .education-entries .entry .years {
+  font-size: 13px;
+  color: #666;
+}
+.right-column .experience .job {
+  margin-bottom: 40px;
+}
+.right-column .experience .job .job-position {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.right-column .experience .job .job-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.right-column .experience .job .job-meta span {
+  padding: 3px 10px;
+  margin-right: 15px;
+  color: #fff;
   text-transform: uppercase;
 }
-
-.section {
-  margin-bottom: 25px !important;
+.right-column .experience .job .job-meta .tag-present {
+  background-color: #e86142;
 }
-.section h2 {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 700 !important;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
+.right-column .experience .job .job-meta .tag-years {
+  background-color: #2c2c2c;
+}
+.right-column .experience .job .job-meta .company {
+  color: #666;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
-
-.about-section p {
-  font-size: 0.9rem;
-  line-height: 1.8;
+.right-column .expertise {
+  margin-bottom: 0;
 }
-
-.education-grid .education-item h3 {
-  font-size: 0.95rem;
-  color: #333;
-  font-weight: 700;
-  margin-bottom: 3px;
+.right-column .expertise .expertise-list {
+  display: flex;
+  justify-content: space-around;
 }
-.education-grid .education-item p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-.education-grid .education-item .dates {
-  font-size: 0.8rem;
-  color: #333;
-  font-weight: 400;
-}
-
-.experience-item h3 {
-  font-size: 0.95rem;
-}
-.experience-item .tag {
-  font-size: 0.7rem;
-  padding: 2px 7px;
-}
-.experience-item .company-location {
-  font-size: 0.9rem;
-}
-.experience-item p {
-  font-size: 0.9rem;
-}
-
-.expertise-list {
-  margin-top: 25px;
-}
-.expertise-list .expertise-item {
-  text-align: center;
-}
-.expertise-list .expertise-item .circle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+.right-column .expertise .expertise-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #EF5350;
-  border: 2px solid #EF5350;
-  margin-bottom: 5px;
+  text-align: center;
 }
-.expertise-list .expertise-item p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #333;
+.right-column .expertise .progress-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
-
-@media (max-width: 768px) {
-  .resume-container {
-    flex-direction: column;
-    height: auto;
-    min-height: auto;
+@property --p {
+  .right-column .expertise .progress-circle {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
   }
-  .left-column, .right-column {
-    width: 100%;
-    padding: 20px !important;
-  }
-  .left-column .address-header {
-    text-align: left;
-  }
+}
+.right-column .expertise .progress-circle {
+  transition: --p 1s;
+  background: conic-gradient(from 135deg, #e86142 calc(var(--p) * 1%), #e0e0e0 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent 79%, #000 80%);
+  mask: radial-gradient(farthest-side, transparent 79%, #000 80%);
+}
+.right-column .expertise span {
+  font-size: 14px;
+  color: #2c2c2c;
+  font-weight: 400;
+  line-height: 1.3;
 }

@@ -1,0 +1,253 @@
+// ЗМІННІ І ШРИФТИ
+$primary-color: #e86142;
+$light-gray-bg: #f0f0f0;
+$dark-text: #2c2c2c;
+$gray-text: #666;
+$border-color: #ddd;
+$font-family: 'Lato', sans-serif;
+
+// ГЛОБАЛЬНІ СТИЛІ
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: #e0e0e0;
+  color: $dark-text;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+// КОНТЕЙНЕР РЕЗЮМЕ (БІЛИЙ АРКУШ)
+.resume-container {
+  position: relative;
+  width: 900px;
+  min-height: 1272px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+// ЛІВА СІРА КОЛОНКА
+.left-column {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 33%;
+  background-color: $light-gray-bg;
+
+  .address-left-column {
+    padding: 35px 35px 0 35px;
+    h3 {
+      color: $primary-color;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    p {
+      color: $gray-text;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 35px;
+    }
+  }
+
+  .profile-image-container {
+    .orange-bar {
+      height: 8px;
+      background-color: $primary-color;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .left-column-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    gap: 40px;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .contact-info p {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $gray-text;
+    strong {
+      color: $dark-text;
+      font-weight: 700;
+    }
+  }
+
+  .reference {
+    font-size: 15px;
+    .small-text {
+      font-size: 14px;
+      color: $gray-text;
+      line-height: 1.4;
+    }
+  }
+
+  .hobbies .hobbies-list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    .hobby-item {
+      font-size: 13px;
+      color: $gray-text;
+      i {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        border: 2px solid $primary-color;
+        border-radius: 50%;
+        color: $primary-color;
+        margin-bottom: 8px;
+        display: block;
+      }
+    }
+  }
+}
+
+// ПРАВА ОСНОВНА КОЛОНКА
+.right-column {
+  padding: 50px 40px 30px 41%;
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 25px;
+  }
+
+  section {
+    margin-bottom: 60px; // ЗМІНЕНО: Відступ ще збільшено
+  }
+
+  .main-header {
+    margin-bottom: 80px; // ЗМІНЕНО: Відступ ще збільшено
+    .address {
+      display: none;
+    }
+    h1 {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .job-title {
+      font-size: 16px;
+      color: $gray-text;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 4px solid $primary-color;
+      display: inline-block;
+      font-weight: 700;
+    }
+  }
+
+  .about-me p, .job-description {
+    font-size: 15px;
+    color: $gray-text;
+    line-height: 1.7;
+  }
+
+  .education .education-entries {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    .entry {
+      .major { font-weight: 700; font-size: 16px; }
+      .university { color: $gray-text; font-size: 15px; }
+      .years { font-size: 13px; color: $gray-text; }
+    }
+  }
+
+  .experience .job {
+    margin-bottom: 40px; // Збільшено відступ
+    .job-position {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .job-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      span {
+        padding: 3px 10px;
+        margin-right: 15px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      .tag-present { background-color: $primary-color; }
+      .tag-years { background-color: $dark-text; }
+      .company { color: $gray-text; text-transform: uppercase; letter-spacing: 1px; }
+    }
+  }
+
+  .expertise {
+    margin-bottom: 0;
+    .expertise-list {
+      display: flex;
+      justify-content: space-around;
+    }
+    .expertise-item {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .progress-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+
+      @property --p{
+        syntax: '<number>';
+        inherits: true;
+        initial-value: 0;
+      }
+      transition: --p 1s;
+
+      background: conic-gradient(from 135deg, $primary-color calc(var(--p) * 1%), #e0e0e0 0);
+
+      -webkit-mask: radial-gradient(farthest-side, transparent 79%, #000 80%);
+      mask: radial-gradient(farthest-side, transparent 79%, #000 80%);
+    }
+
+    span {
+      font-size: 14px;
+      color: $dark-text;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+  }
+}

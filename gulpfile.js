@@ -1,95 +1,51 @@
-const gulp = require('gulp');
+// Підключаємо основні модулі
+const { src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
 
-// Шляхи
-const paths = {
-    styles: {
-        src: 'src/scss/**/*.scss',
-        // Компілюємо наш власний SCSS у фінальну папку dist/css
-        dest: 'dist/css'
-    },
-    // Додаємо шляхи для копіювання
-    html: 'src/**/*.html',
-    js: 'src/js/**/*.js',
-    img: 'src/img/**/*',
-
-    // Шляхи до файлів Bootstrap (з node_modules)
-    bootstrapCSS: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
-    bootstrapJS: 'node_modules/bootstrap/dist/js/bootstrap.min.js'
+// Таск для компіляції SCSS в CSS
+const styles = () => {
+    return src('app/scss/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(dest('dist/css'))
+        .pipe(browserSync.stream());
 };
 
-// 1. Таск для копіювання мініфікованого CSS Bootstrap (Вимога 3)
-function copyBootstrapCSS() {
-    return gulp.src(paths.bootstrapCSS)
-        .pipe(gulp.dest('dist/css'));
-}
+// Таск для копіювання HTML
+const html = () => {
+    return src('app/*.html')
+        .pipe(dest('dist'))
+        .pipe(browserSync.reload({ stream: true }));
+};
 
-// 2. Таск для копіювання мініфікованого JS Bootstrap (Вимога 3)
-function copyBootstrapJS() {
-    return gulp.src(paths.bootstrapJS)
-        .pipe(gulp.dest('dist/js'));
-}
+// ВАША ТАСКА ДЛЯ ОПТИМІЗАЦІЇ ЗОБРАЖЕНЬ
+const img_task = () => {
+    return src('app/img/**/*', { encoding: false })
+        .pipe(imagemin())
+        .pipe(dest('dist/img'));
+};
 
-// 3. Таск для копіювання HTML, JS та ЗОБРАЖЕНЬ (для коректної роботи)
-function copyOtherFiles() {
-    // Копіюємо HTML
-    gulp.src(paths.html)
-        .pipe(gulp.dest('dist'));
-
-    // Копіюємо JS
-    gulp.src(paths.js)
-        .pipe(gulp.dest('dist/js'));
-
-    // Копіюємо ЗОБРАЖЕННЯ
-    return gulp.src(paths.img)
-        .pipe(gulp.dest('dist/img'));
-}
-
-
-// 4. Задача для компіляції нашого SCSS
-function style() {
-    return gulp.src(paths.styles.src)
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(browserSync.stream()); // Додаємо автооновлення CSS
-}
-
-// 5. Задача для ініціалізації сервера BrowserSync
-function serve(done) {
+// Таск для запуску сервера і стеження за змінами
+const watchFiles = () => {
     browserSync.init({
         server: {
-            // ОБСЛУГОВУЄМО ТЕПЕР ФІНАЛЬНУ ПАПКУ DIST
-            baseDir: './dist'
+            baseDir: "./dist"
         },
-        open: true
+        browser: "chrome"
     });
-    done();
-}
 
-// 6. Задача для відстеження змін
-function watch() {
-    gulp.watch(paths.styles.src, style);
-    // При зміні HTML/JS/IMG копіюємо файли і перезавантажуємо
-    gulp.watch(paths.html, gulp.series(copyOtherFiles, browserSync.reload));
-    gulp.watch(paths.js, gulp.series(copyOtherFiles, browserSync.reload));
-    gulp.watch(paths.img, gulp.series(copyOtherFiles, browserSync.reload));
-}
+    watch('app/scss/**/*.scss', styles);
+    watch('app/*.html', html);
+    watch('app/img/**/*', img_task).on('change', browserSync.reload);
+};
 
-// Фінальна збірка (запускає все необхідне для створення папки dist)
-const build = gulp.series(
-    copyBootstrapCSS,
-    copyBootstrapJS,
-    copyOtherFiles,
-    style
-);
+// Експортуємо таски для використання
+exports.styles = styles;
+exports.html = html;
+exports.img_task = img_task; // Експортуємо вашу таску
+exports.watch = watchFiles;
 
-// Експорт функцій Gulp:
-exports.copyBootstrapCSS = copyBootstrapCSS;
-exports.copyBootstrapJS = copyBootstrapJS;
-exports.style = style;
-exports.watch = watch;
-exports.build = build;
+// Таск за замовчуванням
+exports.default = series(parallel(html, img_task, styles), watchFiles);
 
-// Задача 'gulp' за замовчуванням: збірка, запуск сервера та відстеження
-exports.default = gulp.series(build, serve, watch);
