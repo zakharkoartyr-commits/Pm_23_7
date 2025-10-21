@@ -43,7 +43,7 @@ const watchFiles = () => {
 // Експортуємо таски для використання
 exports.styles = styles;
 exports.html = html;
-exports.img_task = img_task; // Експортуємо вашу таску
+exports.img_task = img_task;
 exports.watch = watchFiles;
 
 // Таск за замовчуванням
